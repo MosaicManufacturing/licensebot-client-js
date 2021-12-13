@@ -1,0 +1,18 @@
+{
+  "name": "licensebot-client-js",
+  "version": "0.1.0",
+  "bin": {
+    "licensebot": "src/index.js"
+  },
+  "author": "Mosaic Manufacturing Ltd.",
+  "license": "MIT",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint src"
+  },
+  "devDependencies": {
+    "eslint": "^8.4.1"
+  },
+  "dependencies": {
+    "@wbmnky/license-report-generator": "^2.1.3"
+  }
+}
