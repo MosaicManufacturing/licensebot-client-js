@@ -26,4 +26,4 @@ lint:
 deploy:
   stage: deploy
   script:
-    - yarn publish --access public
+    - npm publish --access public
