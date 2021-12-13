@@ -25,5 +25,9 @@ lint:
 
 deploy:
   stage: deploy
+  before_script:
+    - cat < .npmrc
+      //registry.npmjs.org/:_authToken=$NPM_CI_TOKEN
+      EOF
   script:
     - npm publish --access public
