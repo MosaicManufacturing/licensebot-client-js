@@ -1,0 +1,29 @@
+# Execute CI pipeline using the following global rules:
+workflow:
+  rules:
+    # if it is an MR FROM master, don't run pipeline
+    - if: $CI_MERGE_REQUEST_ID && $CI_COMMIT_REF_NAME == "master"
+      when: never
+    # otherwise, if it is an MR from any other branches, run pipeline
+    - if: $CI_MERGE_REQUEST_ID
+    # otherwise, if it is not an MR but the branch master, run pipeline
+    - if: $CI_COMMIT_REF_NAME == "master"
+
+stages:
+  - test
+  - deploy
+
+default:
+  image: node:14
+
+lint:
+  stage: test
+  before_script:
+    - yarn install
+  script:
+    - yarn lint
+
+deploy:
+  stage: deploy
+  script:
+    - yarn publish --access public
