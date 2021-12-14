@@ -85,7 +85,8 @@ const checkAllInBlacklist = async (licenses) => {
  * @returns {Promise<Object[]>}
  */
 const getLicenses = async () => {
-  const licenses = await resolveLicenses();
+  const licenses = (await resolveLicenses())
+    .filter(license => !license.name.startsWith('@mosaic-canvas/'));
   licenses.sort((a, b) => a.name.localeCompare(b.name));
   await checkAllInBlacklist(licenses);
   return licenses;
