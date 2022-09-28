@@ -1,6 +1,6 @@
 {
   "name": "@mosaic-canvas/licensebot-client-js",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "bin": {
     "licensebot": "src/index.js"
   },
@@ -8,6 +8,12 @@
   "repository": {
     "url": "https://github.com/MosaicManufacturing/licensebot-client-js"
   },
+  "files": [
+    "/src",
+    "/blacklist.txt",
+    "package.json",
+    "README.md"
+  ],
   "license": "MIT",
   "scripts": {
     "lint": "./node_modules/.bin/eslint src"
