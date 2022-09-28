@@ -1,6 +1,6 @@
 {
   "name": "@mosaic-canvas/licensebot-client-js",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "bin": {
     "licensebot": "src/index.js"
   },
