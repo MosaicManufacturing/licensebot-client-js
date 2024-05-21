@@ -4,7 +4,7 @@ on:
   pull_request:
 
 env:
-  NODE_VERSION: 14
+  NODE_VERSION: 20
 
 jobs:
   lint:
@@ -14,7 +14,7 @@ jobs:
     # the "push" workflow associated with this PR, so nothing needs to be re-run
     if: github.head_ref != 'master'
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: ./.github/actions/lint
         with:
           node-version: ${{env.NODE_VERSION}}
